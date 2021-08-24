@@ -6,8 +6,14 @@ class CreateAirports < ActiveRecord::Migration[6.1]
     end
 
 
-    add_reference :airports, :outbound_flight, foreign_key: "flight_id"
-    add_reference :airports, :inbound_flight, foreign_key: "flight_id"
+    add_column :airports, :outbound_flight_id, :integer
+    
+    add_foreign_key :airports, :flight, column: :outbound_flight_id, primary_key: "airport_id"
+
+    add_column :airports, :inbound_flight_id, :integer
+
+    add_foreign_key :airports, :flight, column: :inbound_flight_id, primary_key: "airport_id"
+
 
   end
 end
