@@ -8,7 +8,7 @@ class CreateFlights < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-
+    #add after building airports
     #add_reference :flights, :departure_airport, foreign_key: true
     #add_reference :flights, :destination_airport, foreign_key: true
   end
