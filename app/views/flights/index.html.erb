@@ -9,22 +9,27 @@
     <tr>
            <th>Airline</th>
 
-      <th>departure airport</th>
-      <th>destination airport</th>
+      <th>Departure airport</th>
+      <th>Destination airport</th>
+      <th>Date</th>
+      <th>Departs at</th>
+            <th>Arrives at</th>
 
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-  
+  <td><br></td>
+
     <% @flights.each do |flight| %>
       <tr>
         <td><%= flight.airline %></td>
 
         <td><%= flight.departure_airport.name %></td>
         <td><%= flight.destination_airport.name %></td>
-
+        <td><%= flight.flight_date %></td>
+        <td><%= flight.departure_time%></td>
+        <td><%= flight.arrival_time%></td>
 
 
         <% end %>
