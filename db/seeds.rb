@@ -40,7 +40,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 1, 
-    destination_airport_id: 3
+    destination_airport_id: 3,
+    airline: "Fly Emirates"
 
 
 
@@ -52,7 +53,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 2, 
-    destination_airport_id: 3
+    destination_airport_id: 3,
+    airline: "United"
 
 
 
@@ -65,8 +67,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 3, 
-    destination_airport_id: 2
-
+    destination_airport_id: 2,
+    airline: "United"
 
 
 
@@ -76,7 +78,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 1, 
-    destination_airport_id: 3
+    destination_airport_id: 3,
+    airline: "United"
 
 
 
@@ -87,7 +90,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 1, 
-    destination_airport_id: 3
+    destination_airport_id: 3,
+    airline: "Norwegian"
 
 
 
@@ -98,7 +102,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 4, 
-    destination_airport_id: 3
+    destination_airport_id: 3,
+    airline: "Aegean"
 
 
 
@@ -109,7 +114,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 2, 
-    destination_airport_id: 1
+    destination_airport_id: 1,
+    airline: "Norwegian"
 
 
 
@@ -120,7 +126,8 @@ Flight.create!([{
     departure_time: nil, 
     arrival_time: nil, 
     departure_airport_id: 1, 
-    destination_airport_id: 3
+    destination_airport_id: 3,
+    airline: "Turkish Airlines"
 
 
 
