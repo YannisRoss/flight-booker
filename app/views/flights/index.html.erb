@@ -7,7 +7,7 @@
 
   <thead>
     <tr>
-           <th>flight</th>
+           <th>Airline</th>
 
       <th>departure airport</th>
       <th>destination airport</th>
@@ -20,7 +20,7 @@
   
     <% @flights.each do |flight| %>
       <tr>
-        <td><%= flight %></td>
+        <td><%= flight.airline %></td>
 
         <td><%= flight.departure_airport.name %></td>
         <td><%= flight.destination_airport.name %></td>
