@@ -1,4 +1,7 @@
 <h1>FORM</h1>
+<div class=form>
+<%= form_with url: "/flights", method: :get do |form| %>
+
 From
   <%= select_tag(:departure_airport_id, options_for_select(@airport_options)) %>
 
@@ -17,7 +20,9 @@ Number of Passengers
     </select>
 
 
-
+  <%= submit_tag "Search" %>
+  <% end %>
+</div>
 <h1>Flights</h1>
 
 <h2>
