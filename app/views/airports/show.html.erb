@@ -1,0 +1,32 @@
+<h1><%= @airport.name%></h1>
+<h3>inbound</h3>
+<table>
+
+  <thead>
+    <tr>
+     
+        <th>Origin</th>
+        <th>Time</th>
+
+
+      <th colspan="30"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airport.inbound_flights.each do |flight| %>
+      <tr>
+            <td>
+                <%= "from #{flight.departure_airport.name}" %>
+
+            </td>
+       
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<h3>outbound</h3>
+
+

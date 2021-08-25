@@ -8,8 +8,8 @@
     <tr>
      
       <th>name</th>
-      <th>inbound flights</th>
-      <th>outbound flights</th>
+      <th>Number of inbound flights</th>
+      <th>Number of outbound flights</th>
 
       <th colspan="3"></th>
     </tr>
@@ -18,10 +18,11 @@
   <tbody>
     <% @airports.each do |airport| %>
       <tr>
-        <td><%= airport.name %></td>
-        <td><%= airport.inbound_flights.first %></td>
-        <td><%= airport.outbound_flights.first %></td>
-
+        <td><%= link_to airport.name, airport %></td>
+        <td><%= airport.inbound_flights.size %>
+        </td>
+        <td><%= airport.outbound_flights.size %>
+        </td>
 
 
         <% end %>
