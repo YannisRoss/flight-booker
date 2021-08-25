@@ -1,0 +1,29 @@
+<h1>Flights</h1>
+
+<h2>
+<%= link_to "Airports", "airports#index"%>
+</h2>
+<table>
+
+  <thead>
+    <tr>
+     
+      <th>departure airport</th>
+      <th>destination airport</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flights.each do |flight| %>
+      <tr>
+        <td><%= flight.departure_airport.name %></td>
+        <td><%= flight.destination_airport.name %></td>
+
+
+
+        <% end %>
+      </tr>
+  </tbody>
+</table>
