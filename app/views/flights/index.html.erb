@@ -1,3 +1,35 @@
+<h1>FORM</h1>
+From
+  <select name="departure_airport_id">
+  <% @airports.each do |airport|%>
+<option value=<%= airport.id%>><%=airport.name%></option>
+<% end %>
+
+    </select>
+
+To     <select name="destination_airport_id">
+  <% @airports.each do |airport|%>
+<option value=<%= airport.id%>><%=airport.name%></option>
+<% end %>
+
+    </select>
+
+Date
+  <select name="flight_date">
+<option>month</option>
+<option>2mgosk</option>
+<option>gnun3</option>
+
+    </select>
+Number of Passengers
+ <select name="passengers_number">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+    </select>
+
+
+
 <h1>Flights</h1>
 
 <h2>
