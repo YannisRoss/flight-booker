@@ -2,27 +2,36 @@
 
 <h2> <%= "#{@flight.airline} flight from #{@flight.departure_airport.name} to #{@flight.destination_airport.name}
 on #{@flight.flight_date} at #{@flight.departure_time}. Arrives at #{@flight.arrival_time}" %></h2>
-<div>
         
 
 
 
-<h5>Contact details:</h5>
+<h3>Contact details:</h3>
+    <% i = 1%>
 
-<%= form_with model: @passenger do |form| %>
-  
-    <%= form.label :name, "Full name:" %>
-    <%= form.text_field :name %>
-<br>
-      
-    <%= form.label :email, "Email:" %>
-    <%= form.email_field :email %>
-<br>
-  
-    <%= form.label :name, "Phone number:" %>
-    <%= form.telephone_field :phone %>
+        <%= form_with model: @passenger do |form| %>
+        <% (params[:passengers_number]).to_i.times do %>
 
-<br><br>
-    <%= form.submit "Confirm details"%>
+            <h4><%= "Passenger #{i.to_s}"%> <br> </h4>
+            <%i += 1%>
+
+                <%= form.label :name, "Full name:" %>
+                <%= form.text_field :name %>
+            <br>
+                
+                <%= form.label :email, "Email:" %>
+                <%= form.email_field :email %>
+            <br>
+            
+                <%= form.label :name, "Phone number:" %>
+                <%= form.telephone_field :phone %>
+
+            <br><br>
+            <br>
+
+            <% end %>
+        <%= form.submit "Confirm details"%>
+
     <% end %>
-</div>
+
+
