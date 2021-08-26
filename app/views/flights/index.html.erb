@@ -53,18 +53,18 @@ Number of Passengers
 <%= form_with url: "bookings#new",method: "get" do |form|%>
 
     <% found_flights.each do |flight| %>
-    <% i = 1 %>
 
       <tr>
         <td><%= flight.airline %></td>
-        
+
         <td><%= flight.departure_airport.name %></td>
         <td><%= flight.destination_airport.name %></td>
-        <td><%= flight.flight_date %></td>
+        <td><%= flight.flight_date %></td> 
         <td><%= flight.departure_time%></td>
         <td><%= flight.arrival_time%></td>
-      <td><%= form.radio_button :flight, "flight_#{i.to_s}"%></td>
-      <%i += 1%>
+        <td><%= form.radio_button :flight, flight.id %></td>
+      <%= form.hidden_field :passengers_number, value: params[:passengers_number] %>
+
         <% end %>
 
       </tr>
