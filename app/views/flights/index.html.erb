@@ -6,11 +6,11 @@ From
   <%= select_tag(:departure_airport_id, options_for_select(@airport_options)) %>
 
 To       
-<%= select(:flight, :destination_airport_id, @airport_options) %>
+  <%= select_tag(:destination_airport_id, options_for_select(@airport_options)) %>
 
 
 Date
-  <%= select_tag(:departure_time, options_for_select(@available_dates)) %>
+  <%= select_tag(:flight_date, options_for_select(@available_dates)) %>
 
 Number of Passengers
  <select name="passengers_number">
@@ -43,13 +43,17 @@ Number of Passengers
       <th colspan="3"></th>
     </tr>
   </thead>
+<% if params[:departure_airport_id].present?%>
+  <% found_flights = Flight.where departure_airport_id: params[:departure_airport_id], destination_airport_id: params[:destination_airport_id], flight_date: params[:flight_date]
+ %>
+
   <tbody>
   <td><br></td>
 
-    <% @flights.each do |flight| %>
+    <% found_flights.each do |flight| %>
       <tr>
         <td><%= flight.airline %></td>
-
+        
         <td><%= flight.departure_airport.name %></td>
         <td><%= flight.destination_airport.name %></td>
         <td><%= flight.flight_date %></td>
@@ -61,3 +65,5 @@ Number of Passengers
       </tr>
   </tbody>
 </table>
+
+ <% end %>
