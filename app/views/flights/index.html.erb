@@ -25,9 +25,7 @@ Number of Passengers
 </div>
 <h1>Flights</h1>
 
-<h2>
-<%= link_to "Airports", "airports#index"%>
-</h2>
+
 <table>
 
   <thead>
@@ -43,14 +41,20 @@ Number of Passengers
       <th colspan="3"></th>
     </tr>
   </thead>
+  <div>
 <% if params[:departure_airport_id].present?%>
   <% found_flights = Flight.where departure_airport_id: params[:departure_airport_id], destination_airport_id: params[:destination_airport_id], flight_date: params[:flight_date]
  %>
+  <%= "Found #{found_flights.length} flights:" %>
+  </div>
+    <br>
 
   <tbody>
-  <td><br></td>
+<%= form_with do |form|%>
 
     <% found_flights.each do |flight| %>
+    <% i = 0 %>
+
       <tr>
         <td><%= flight.airline %></td>
         
@@ -62,8 +66,12 @@ Number of Passengers
 
 
         <% end %>
+
       </tr>
+
   </tbody>
 </table>
+<%= form.submit%>
+<% end %>
 
  <% end %>
