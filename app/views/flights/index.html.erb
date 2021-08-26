@@ -50,7 +50,7 @@ Number of Passengers
     <br>
 
   <tbody>
-<%= form_with url: "bookings#new",method: "get" do |form|%>
+<%= form_with action: "bookings#new",method: "get" do |form|%>
 
     <% found_flights.each do |flight| %>
 
