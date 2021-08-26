@@ -53,7 +53,7 @@ Number of Passengers
 <%= form_with do |form|%>
 
     <% found_flights.each do |flight| %>
-    <% i = 0 %>
+    <% i = 1 %>
 
       <tr>
         <td><%= flight.airline %></td>
@@ -63,8 +63,8 @@ Number of Passengers
         <td><%= flight.flight_date %></td>
         <td><%= flight.departure_time%></td>
         <td><%= flight.arrival_time%></td>
-
-
+      <td><%= form.radio_button :flight, "flight_#{i.to_s}"%></td>
+      <%i += 1%>
         <% end %>
 
       </tr>
