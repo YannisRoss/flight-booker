@@ -13,9 +13,15 @@ on #{@flight.flight_date} at #{@flight.departure_time}. Arrives at #{@flight.arr
             <%= f.hidden_field :flight_id, value: @flight.id %>
 
             <% (params[:passengers_number]).to_i.times do %>
-                <%= f.fields_for @booking.passengers.build do |form| %>
+                <% @booking.passengers.build %>
+                <% end %>
 
-                <h4><%= "Passenger #{i.to_s}"%> <br> </h4>
+            <% @booking.passengers.each_with_index do |passenger, index| %>
+                <%= f.fields_for passenger, index: index do |form| %>
+
+                <h4><%= "Passenger #{index+1}"%> <br> </h4>
+                <h4><%= passenger%> <br> </h4>
+
                 <%i += 1%>
 
                     <%= form.label :name, "Full name:" %>
@@ -27,11 +33,11 @@ on #{@flight.flight_date} at #{@flight.departure_time}. Arrives at #{@flight.arr
         
                 <br><br>
                 <br>
+             <% end %>
+        <% end %>
 
-                <% end %>
             <%= f.submit "Confirm details"%>
         <% end %>
 
-        <% end %>
 
 
