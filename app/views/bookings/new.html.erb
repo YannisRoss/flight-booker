@@ -9,7 +9,7 @@ on #{@flight.flight_date} at #{@flight.departure_time}. Arrives at #{@flight.arr
 <h3>Contact details:</h3>
     <% i = 1%>
 
-        <%= form_with model: @passenger do |f| %>
+        <%= form_with model: @passenger, url: bookings_path do |f| %>
 
             <% (params[:passengers_number]).to_i.times do %>
                 <%= f.fields_for @booking.passengers.build do |form| %>
