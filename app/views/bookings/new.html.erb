@@ -14,10 +14,9 @@ on #{@flight.flight_date} at #{@flight.departure_time}. Arrives at #{@flight.arr
             
 
             <% @booking.passengers.each_with_index do |passenger, index| %>
-                <%= f.fields_for passenger, index: index do |form| %>
+                <%= f.fields_for :passengers, passenger, index: index do |form| %>
 
                 <h4><%= "Passenger #{index+1}"%> <br> </h4>
-                <h4><%= passenger%> <br> </h4>
 
                     <%= form.label :name, "Full name:" %>
                     <%= form.text_field :name %>

@@ -7,5 +7,12 @@
 <h2>Destination: <%= @booking.flight.destination_airport%></h2>
 <h2>Origin: <%= @booking.flight.departure_airport%></h2>
 <h2>Date: <%=@booking.flight.flight_date%></h2>
-<h2>Passengers: <%=@booking.passengers.each{|p| p.name}%></h2>
+
+<% i = 1%>
+<h2>Passengers: <%=@booking.flight.passengers.size%></h2>
+<% while i <= @booking.flight.passengers.size %>
+
+<h2><%= "Passenger #{i}: #{@booking.passengers[i-1].name}"%></h2>
+<% i += 1%>
+<%end%>
 <h2></h2>
