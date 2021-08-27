@@ -36,8 +36,7 @@ class BookingsController < ApplicationController
 
     def booking_params 
         params.require(:booking).permit(:flight_id, 
-            :passengers_attributes => [:name, :email, :passenger_id, :created_at, :updated_at],
-            :passenger => [:name, :email, :passenger_id, :created_at, :updated_at])
+            :passengers_attributes => [:name, :email, :passenger_id, :created_at, :updated_at])
             
     end
     def show
