@@ -9,25 +9,28 @@ on #{@flight.flight_date} at #{@flight.departure_time}. Arrives at #{@flight.arr
 <h3>Contact details:</h3>
     <% i = 1%>
 
-        <%= form_with model: @passenger do |form| %>
-        <% (params[:passengers_number]).to_i.times do %>
+        <%= form_with model: @passenger do |f| %>
 
-            <h4><%= "Passenger #{i.to_s}"%> <br> </h4>
-            <%i += 1%>
+            <% (params[:passengers_number]).to_i.times do %>
+                <%= f.fields_for @booking.passengers.build do |form| %>
 
-                <%= form.label :name, "Full name:" %>
-                <%= form.text_field :name %>
-            <br>
-                
-                <%= form.label :email, "Email:" %>
-                <%= form.email_field :email %>
-    
-            <br><br>
-            <br>
+                <h4><%= "Passenger #{i.to_s}"%> <br> </h4>
+                <%i += 1%>
 
-            <% end %>
-        <%= form.submit "Confirm details"%>
+                    <%= form.label :name, "Full name:" %>
+                    <%= form.text_field :name %>
+                <br>
+                    
+                    <%= form.label :email, "Email:" %>
+                    <%= form.email_field :email %>
+        
+                <br><br>
+                <br>
 
-    <% end %>
+                <% end %>
+            <%= f.submit "Confirm details"%>
+        <% end %>
+
+        <% end %>
 
 
