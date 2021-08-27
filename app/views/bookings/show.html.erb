@@ -1,1 +1,11 @@
-<h1></h1>
+<h1>Your booking</h1>
+
+
+<h2>Booking code: <%= @booking.id %> </h2>
+
+<h2>Airline: <%= @booking.flight.airline %></h2>
+<h2>Destination: <%= @booking.flight.destination_airport%></h2>
+<h2>Origin: <%= @booking.flight.departure_airport%></h2>
+<h2>Date: <%=@booking.flight.flight_date%></h2>
+<h2>Passengers: <%=@booking.passengers.each{|p| p.name}%></h2>
+<h2></h2>
