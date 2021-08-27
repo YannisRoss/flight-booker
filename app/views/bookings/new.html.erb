@@ -7,22 +7,17 @@ on #{@flight.flight_date} at #{@flight.departure_time}. Arrives at #{@flight.arr
 
 
 <h3>Contact details:</h3>
-    <% i = 1%>
 
         <%= form_with model: @booking, url: bookings_path do |f| %>
             <%= f.hidden_field :flight_id, value: @flight.id %>
 
-            <% (params[:passengers_number]).to_i.times do %>
-                <% @booking.passengers.build %>
-                <% end %>
+            
 
             <% @booking.passengers.each_with_index do |passenger, index| %>
                 <%= f.fields_for passenger, index: index do |form| %>
 
                 <h4><%= "Passenger #{index+1}"%> <br> </h4>
                 <h4><%= passenger%> <br> </h4>
-
-                <%i += 1%>
 
                     <%= form.label :name, "Full name:" %>
                     <%= form.text_field :name %>

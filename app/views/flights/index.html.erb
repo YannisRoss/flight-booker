@@ -62,7 +62,7 @@ Number of Passengers
         <td><%= flight.flight_date %></td> 
         <td><%= flight.departure_time%></td>
         <td><%= flight.arrival_time%></td>
-        <td><%= form.radio_button :flight, flight.id %></td>
+        <td><%= form.radio_button :flight_id, flight.id %></td>
       <%= form.hidden_field :passengers_number, value: params[:passengers_number] %>
 
         <% end %>
