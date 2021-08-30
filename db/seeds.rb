@@ -36,6 +36,55 @@ p "created #{Airport.all.size} airports"
 
 Flight.create!([{
 
+    flight_date: "2021-09-01", 
+    departure_time: "05:00",
+    arrival_time: "16:00", 
+    departure_airport_id: 1, 
+    destination_airport_id: 2,
+    airline: "Lufthansa"
+
+
+
+
+},{
+
+    flight_date: "2021-09-01", 
+    departure_time: "06:30",
+    arrival_time: "18:00", 
+    departure_airport_id: 1, 
+    destination_airport_id: 2,
+    airline: "Aegean"
+
+
+
+
+},{
+
+    flight_date: "2021-09-01", 
+    departure_time: "11:30",
+    arrival_time: "22:30", 
+    departure_airport_id: 1, 
+    destination_airport_id: 2,
+    airline: "Olympic"
+
+
+
+
+},{
+
+    flight_date: "2021-09-01", 
+    departure_time: "08:30",
+    arrival_time: "19:40", 
+    departure_airport_id: 1, 
+    destination_airport_id: 2,
+    airline: "Aegean"
+
+
+
+
+},
+{
+
     flight_date: "2021-12-21", 
     departure_time: "11:30",
     arrival_time: "16:40", 
