@@ -14,6 +14,11 @@ class BookingsController < ApplicationController
 
         respond_to do |format|
             if @booking.save
+                @booking.passengers.each do |passenger|
+
+                    PassengerMailer.with(passenger: passenger).thanks_email.deliver_later
+
+                end
               format.html { redirect_to @booking, notice: "booking was successfully created." }
               format.json { render :show, status: :created, location: @booking }
             else
