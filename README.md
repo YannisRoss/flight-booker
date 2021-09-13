@@ -1,24 +1,7 @@
-# README
+# Flights-on-Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+A flight-booking website, mimicking websites like Skyscanner.gr.
 
-* Ruby version
+Built on Ruby on Rails and deployed on Heroku [here](https://flights-on-rails.herokuapp.com/)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
